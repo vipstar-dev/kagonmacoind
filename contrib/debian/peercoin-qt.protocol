@@ -1,0 +1,11 @@
+[Protocol]
+exec=kagonmacoin-qt '%u'
+protocol=kagonmacoin
+input=none
+output=none
+helper=true
+listing=
+reading=false
+writing=false
+makedir=false
+deleting=false

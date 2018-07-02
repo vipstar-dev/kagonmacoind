@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=kagonmacoin
+Comment=Core wallet for kagonmacoin P2P Cryptocurrency
+Comment[de]=Offizieller Client für die Kryptowährung kagonmacoin
+Exec=/usr/bin/kagonmacoin-qt %u
+Terminal=false
+Type=Application
+Icon=/usr/share/pixmaps/kagonmacoin128.png
+MimeType=x-scheme-handler/kagonmacoin;
+Categories=Application;Network;

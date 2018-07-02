@@ -1,0 +1,7 @@
+usr/local/bin/kagonmacoin-qt usr/bin
+share/pixmaps/kagonmacoin16.png usr/share/pixmaps
+share/pixmaps/kagonmacoin32.png usr/share/pixmaps
+share/pixmaps/kagonmacoin128.png usr/share/pixmaps
+share/pixmaps/kagonmacoin256.png usr/share/pixmaps
+debian/kagonmacoin-qt.desktop usr/share/applications
+debian/kagonmacoin-qt.protocol usr/share/kde4/services/
