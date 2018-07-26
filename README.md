@@ -21,8 +21,8 @@ And Kagonmacoin is peercoin clone.
 Kagonmacoin Build
 ==================================
 ### Linux
-  	./autogen.sh  
-  	./configure  
-    make  
+  	./autogen.sh
+  	./configure
+    make
 
 ### Windows
