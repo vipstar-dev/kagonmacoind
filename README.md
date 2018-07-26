@@ -13,3 +13,10 @@ And Kagonmacoin is peercoin clone.
 [Discord](https://discord.gg/YeANaJY),
 [Twitter](https://twitter.com/kagonmacoin)
 =======
+
+Kagonmacoin Build
+==================================
+### Linux
+
+### Windows
+=======
