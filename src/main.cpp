@@ -2452,14 +2452,8 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         nHeight = pindexPrev->nHeight+1;
 
 
-	// Change PoS State
-        if (nHeight <= PROOF_OF_WORK_BLOCKS)
-        {
-            if (IsProofOfStake())
-                return state.DoS(100, error("AcceptBlock() : Proof-of-stake before switch"));
-        }
-        else
-        {
+	// AcceptBlock PoS Only
+        if (nHeight > PROOF_OF_WORK_BLOCKS)
             if (IsProofOfWork())
                 return state.DoS(100, error("AcceptBlock() : Proof-of-work after switch"));
         }
@@ -4807,9 +4801,7 @@ CBlockTemplate* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool f
     CBlock *pblock = &pblocktemplate->block; // pointer for convenience
 
 
-    // Change PoS Only
-    if (fProofOfStake && nBestHeight < PROOF_OF_WORK_BLOCKS)
-        return NULL;
+    // CreateNewBlock PoS Only
     if (!fProofOfStake && nBestHeight >= PROOF_OF_WORK_BLOCKS)
         return NULL;
 
