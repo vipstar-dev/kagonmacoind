@@ -73,6 +73,9 @@ static const int STAKE_MIN_AGE = 60 * 60 * 24 * 30; // minimum age for coin age
 static const int STAKE_MAX_AGE = 60 * 60 * 24 * 90; // stake age of full weight
 /** Maximum number of script-checking threads allowed */
 static const int MAX_SCRIPTCHECK_THREADS = 16;
+
+static const int PROOF_OF_WORK_BLOCKS = 750000;////PoWでどのくらいのブロック数まで掘り進めるか
+
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;
 #else

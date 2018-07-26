@@ -2451,6 +2451,21 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
         pindexPrev = (*mi).second;
         nHeight = pindexPrev->nHeight+1;
 
+
+	// Change PoS State
+        if (nHeight <= PROOF_OF_WORK_BLOCKS)
+        {
+            if (IsProofOfStake())
+                return state.DoS(100, error("AcceptBlock() : Proof-of-stake before switch"));
+        }
+        else
+        {
+            if (IsProofOfWork())
+                return state.DoS(100, error("AcceptBlock() : Proof-of-work after switch"));
+        }
+
+
+
         // Check proof-of-work or proof-of-stake
         if (nBits != GetNextTargetRequired(pindexPrev, IsProofOfStake()))
             return state.DoS(100, error("AcceptBlock() : incorrect proof-of-work/proof-of-stake"));
@@ -4790,6 +4805,15 @@ CBlockTemplate* CreateNewBlock(CReserveKey& reservekey, CWallet* pwallet, bool f
         return NULL;
     }
     CBlock *pblock = &pblocktemplate->block; // pointer for convenience
+
+
+    // Change PoS Only
+    if (fProofOfStake && nBestHeight < PROOF_OF_WORK_BLOCKS)
+        return NULL;
+    if (!fProofOfStake && nBestHeight >= PROOF_OF_WORK_BLOCKS)
+        return NULL;
+
+
 
     // Create coinbase tx
     CTransaction txNew;
