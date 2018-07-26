@@ -4,7 +4,9 @@ Kagonmacoin Platform
 
 ### What is kagonmacoin?
 Kagonmacoin make to create a new economic zone to kagoshima in Japan.
+
 And Kagonmacoin is peercoin clone.
+
 
 
 
@@ -19,5 +21,8 @@ And Kagonmacoin is peercoin clone.
 Kagonmacoin Build
 ==================================
 ### Linux
+  	./autogen.sh  
+  	./configure  
+    make  
 
 ### Windows
