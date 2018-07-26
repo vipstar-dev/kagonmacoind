@@ -12,7 +12,7 @@ And Kagonmacoin is peercoin clone.
 [Web Page](http://web.kagonmacoin.net/),
 [Discord](https://discord.gg/YeANaJY),
 [Twitter](https://twitter.com/kagonmacoin)
-=======
+
 
 
 
