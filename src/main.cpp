@@ -2453,7 +2453,7 @@ bool CBlock::AcceptBlock(CValidationState &state, CDiskBlockPos *dbp)
 
 
 	// AcceptBlock PoS Only
-        if (nHeight > PROOF_OF_WORK_BLOCKS)
+        if (nHeight > PROOF_OF_WORK_BLOCKS) {
             if (IsProofOfWork())
                 return state.DoS(100, error("AcceptBlock() : Proof-of-work after switch"));
         }
