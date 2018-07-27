@@ -63,6 +63,7 @@ static const int64 MAX_MONEY = 2000000000 * COIN;
 inline bool MoneyRange(int64 nValue) { return (nValue >= 0 && nValue <= MAX_MONEY); }
 static const int64 MIN_TX_FEE = CENT;
 static const int64 MIN_RELAY_TX_FEE = CENT;
+static const int64 MAX_MINT_PROOF_OF_WORK_PREMINED_BLOCKS = 1000000 * COIN;
 static const int64 MAX_MINT_PROOF_OF_WORK = 8320 * COIN;
 static const int64 MIN_TXOUT_AMOUNT = MIN_TX_FEE;
 /** Coinbase transaction outputs can only be spent after this number of new blocks (network rule) */
@@ -74,7 +75,9 @@ static const int STAKE_MAX_AGE = 60 * 60 * 24 * 90; // stake age of full weight
 /** Maximum number of script-checking threads allowed */
 static const int MAX_SCRIPTCHECK_THREADS = 16;
 
-static const int PROOF_OF_WORK_BLOCKS = 750000;////PoWでどのくらいのブロック数まで掘り進めるか
+static const int PROOF_OF_WORK_PREMINED_BLOCKS = 1000;////PREMINED PoW
+static const int PROOF_OF_WORK_BLOCKS = 750000;////PoW Limit
+
 
 #ifdef USE_UPNP
 static const int fHaveUPnP = true;
@@ -82,8 +85,8 @@ static const int fHaveUPnP = true;
 static const int fHaveUPnP = false;
 #endif
 
-static const uint256 hashGenesisBlockOfficial("0x00000a129ba49cffe31b7353a852562866cbd80d87970533d88536b9fb2afdea");
-static const uint256 hashGenesisBlockTestNet("0x00000b3445051bf40aae91084023e9732430bca94ca98586b8d2f59fbea48bc2");
+static const uint256 hashGenesisBlockOfficial("0x000004f4f958fa5e3a6e255dd305f5376bf01d753f0462dff9aa9db224415cb2");
+static const uint256 hashGenesisBlockTestNet("0x00000e94ba4c618b7de14bf9cff09ead0de6b17b720442feb7d88175df29c18a");
 
 static const int64 nMaxClockDrift = 2 * 60 * 60;        // two hours
 

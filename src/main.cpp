@@ -1122,7 +1122,12 @@ uint256 static GetOrphanRoot(const CBlockHeader* pblock)
 
 int64 GetProofOfWorkReward(unsigned int nBits)
 {
+    if (nBestHeight < PROOF_OF_WORK_PREMINED_BLOCKS) {
+        return MAX_MINT_PROOF_OF_WORK_PREMINED_BLOCKS;
+    }
+
     CBigNum bnSubsidyLimit = MAX_MINT_PROOF_OF_WORK;
+
     CBigNum bnTarget;
     bnTarget.SetCompact(nBits);
     CBigNum bnTargetLimit = bnProofOfWorkLimit;
@@ -3243,7 +3248,7 @@ bool InitBlockIndex() {
         // Genesis block
         const char* pszTimestamp = "On January 7, 2018 Segodon started broadcasting in Taiga Drama.";
         CTransaction txNew;
-        txNew.nTime = 1527803782;
+        txNew.nTime = 1532659564;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
         txNew.vin[0].scriptSig = CScript() << 486604799 << CBigNum(9999) << vector<unsigned char>((const unsigned char*)pszTimestamp, (const unsigned char*)pszTimestamp + strlen(pszTimestamp));
@@ -3253,15 +3258,15 @@ bool InitBlockIndex() {
         block.hashPrevBlock = 0;
         block.hashMerkleRoot = block.BuildMerkleTree();
         block.nVersion = 1;
-        block.nTime    = 1527803782;
+        block.nTime    = 1532659564;
         block.nBits    = bnProofOfWorkLimit.GetCompact();
-        block.nNonce   = 201192;
+        block.nNonce   = 1018443;
 
 
         if (fTestNet)
         {
-            block.nTime    = 1527803783;
-            block.nNonce   = 68527;
+            block.nTime    = 1532659565;
+            block.nNonce   = 1732555;
         }
 
 
@@ -3293,7 +3298,7 @@ bool InitBlockIndex() {
         printf("%s\n", hash.ToString().c_str());
         printf("%s\n", hashGenesisBlock.ToString().c_str());
         printf("%s\n", block.hashMerkleRoot.ToString().c_str());
-        assert(block.hashMerkleRoot == uint256("0xa0cb78f5a73a0b6eee8bdcfefda5446baa53ef36d48fcddef6a4c9e79a4c53a6"));
+        assert(block.hashMerkleRoot == uint256("0x635649f3f6ff5dc054d616139af5e0c022c109b59154ecf68b7d08571efbbdae"));
         block.print();
         assert(hash == hashGenesisBlock);
         // ppcoin: check genesis block
