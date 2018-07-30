@@ -70,13 +70,13 @@ static const int64 MIN_TXOUT_AMOUNT = MIN_TX_FEE;
 static const int COINBASE_MATURITY_JPKC = 500;
 /** Threshold for nLockTime: below this value it is interpreted as block number, otherwise as UNIX timestamp. */
 static const int STAKE_TARGET_SPACING = 10; // 10-minute block spacing 
-static const int STAKE_MIN_AGE = 60 * 60 * 24 * 1; // minimum age for coin age
+static const int STAKE_MIN_AGE = 60 * 60 * 24 * 30; // minimum age for coin age
 static const int STAKE_MAX_AGE = 60 * 60 * 24 * 90; // stake age of full weight
 /** Maximum number of script-checking threads allowed */
 static const int MAX_SCRIPTCHECK_THREADS = 16;
 
 static const int PROOF_OF_WORK_PREMINED_BLOCKS = 1000;////PREMINED PoW
-static const int PROOF_OF_WORK_BLOCKS = 200000;////PoW Limit
+static const int PROOF_OF_WORK_BLOCKS = 750000;////PoW Limit
 
 
 #ifdef USE_UPNP
